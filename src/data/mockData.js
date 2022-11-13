@@ -1280,4 +1280,4 @@ export const mockGeographyData = [
     id: "KOR",
     value: 171135,
   },
-]; 
+];
