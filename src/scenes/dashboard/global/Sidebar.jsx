@@ -45,21 +45,25 @@ const Sidebar = () => {
 
   const generateGreetings = () => {
 
-    var currentHour = moment().format("HH");
-  
+    let currentHour = Number(moment().format("HH"));
+
     if (currentHour >= 3 && currentHour < 12){
         return "Good Morning";
-    } else if (currentHour >= 12 && currentHour < 15){
-        return "Good Afternoon";
-    }   else if (currentHour >= 15 && currentHour < 20){
-        return "Good Evening";
-    } else if (currentHour >= 20 && currentHour < 3){
-        return "Good Night";
-    } else {
-        return "Hello"
+    } 
+    if(currentHour >= 12 && currentHour < 16){
+      return "Good Afternoon"
     }
-  
+    if(currentHour >= 16 && currentHour < 22){
+      return "Good Evening"
+    }
+    if(currentHour >= 22 && currentHour < 24){
+      return "Good Night"
+    }
+    if(currentHour >= 0 && currentHour < 3){
+      return "Happy Dawn"
+    }
   }
+
   return (
     <Box
       sx={{
@@ -88,7 +92,7 @@ const Sidebar = () => {
             icon={isCollapsed ? <MenuOutlinedIcon /> : undefined}
             style={{
               margin: "10px 0 20px 0",
-              color: colors.grey[100],
+              color: colors.grey[300],
             }}
           >
             {!isCollapsed && (
